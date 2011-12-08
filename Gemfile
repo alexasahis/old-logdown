@@ -37,7 +37,6 @@ group :assets do
 end
 
 
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
