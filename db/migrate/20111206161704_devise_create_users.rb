@@ -7,6 +7,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.trackable
       
       t.string :login
+      t.string :screen_name
 
       # t.encryptable
       # t.confirmable

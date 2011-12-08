@@ -11,9 +11,9 @@
     <%# end %>
   <%# end %>
   <li>
-    <%= link_to(current_user.login,user_path(current_user.login), :class => "dropdown-toggle")%>
+    <%= link_to(current_user.login,user_path(current_user), :class => "dropdown-toggle")%>
     <%= render_list :class => "dropdown-menu" do |li|
-      li << link_to(t("menu.my_home_page"), user_path(current_user.login) )
+      li << link_to(t("menu.my_home_page"), "#" )
       unless params[:controller].match(/cpanel/)
         li << link_to(t("menu.edit_account_path"),edit_user_registration_path)
       end

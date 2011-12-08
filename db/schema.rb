@@ -11,12 +11,58 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111206164604) do
+ActiveRecord::Schema.define(:version => 20111208053150) do
+
+  create_table "attached_images", :force => true do |t|
+    t.integer  "user_id"
+    t.boolean  "processing"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attached_images", ["image_content_type"], :name => "index_attached_images_on_image_content_type"
+  add_index "attached_images", ["user_id"], :name => "index_attached_images_on_user_id"
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
     t.integer  "user_id"
     t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blogs", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "blog_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "aasm_state"
+    t.datetime "published_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_roles", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20111206164604) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "login"
+    t.string   "screen_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
