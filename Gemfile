@@ -10,6 +10,9 @@ gem 'mysql2'
 gem 'json'
 
 gem 'devise'
+gem "aasm"
+gem "paperclip"
+gem "delayed_job"
 
 gem "omniauth"
 gem "oauth2"
