@@ -5,7 +5,6 @@
  *= require bootstrap
  *= require sidebar
  *= require_self
- *= require_tree . 
 */
 
 .container-fluid { padding:0;}
