@@ -61,6 +61,12 @@ Logdown::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
 
+  constraints(Subdomain) do 
+    resources :blogs
+    match '/' => 'blogs#show' 
+  end
+  
+  
   root :to => "pages#welcome"
   
   # See how all your routes lay out with "rake routes"
