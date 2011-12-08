@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <%= render_blog_page_title(@site)%>
+  <%= render_blog_author(@site)%>
+  <%= render_blog_description(@site)%>
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="canonical" href="http://upgrade2rails31.heroku.com/">
+  <link href="/favicon.png" rel="icon">
+  
+  <%= stylesheet_link_tag "screen", :media => "screen, projection"%>
+  <%= javascript_include_tag("modernizr-2.0.js")%>
+  <%= javascript_include_tag("ender.js")%>
+  <%= javascript_include_tag("octopress.js")%>
+
+  <link href="/atom.xml" rel="alternate" title="Upgrade your projects to Rails 3.1" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>

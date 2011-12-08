@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20111208053150) do
   create_table "blogs", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
+    t.string   "subtitle"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -46,8 +47,11 @@ ActiveRecord::Schema.define(:version => 20111208053150) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.text     "excerpt"
     t.integer  "blog_id"
     t.integer  "user_id"
+    t.boolean  "no_header",    :default => false
+    t.boolean  "meta",         :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "aasm_state"

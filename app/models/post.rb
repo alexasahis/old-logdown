@@ -84,6 +84,10 @@ class Post < ActiveRecord::Base
     aasm_state == 'published' && published_at > Time.now
   end
   
+  def url
+    "/posts/#{id}"
+  end
+
 
   
 end

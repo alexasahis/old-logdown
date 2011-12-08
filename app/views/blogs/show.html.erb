@@ -1,0 +1,18 @@
+<div class="blog-index">
+    <% for post in @posts %>
+        <article>
+          <%= render :partial => "includes/article" , :locals => { :page => post, :excerpt => post.excerpt, :content => post.content, :index => true , :post => post }%>
+          {% include article.html %}
+        </article>
+    <% end %>
+  <div class="pagination">
+    <%# render :partial => "tmp/pagination" %>
+  </div>
+</div>
+<aside class="sidebar">
+  {% if site.blog_index_asides.size %}
+    {% include_array blog_index_asides %}
+  {% else %}
+    {% include_array default_asides %}
+  {% endif %}
+</aside>

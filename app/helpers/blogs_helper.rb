@@ -4,6 +4,11 @@ module BlogsHelper
     content_tag(:title, blog.title )
   end
   
+  
+  def render_blog_description(blog)
+    tag(:meta, {:name => "description", :content => blog.description})
+  end
+  
   def render_blog_author(blog)
     tag(:meta, :name => "author", :content => blog.user.login)
   end
@@ -12,7 +17,8 @@ module BlogsHelper
     link_to(blog.title, "/")
   end
   
-  def render_blog_description(blog)
-    tag(:meta, {:name => "description", :content => blog.description})
+  def render_blog_subtitle(blog)
+    blog.subtitle
   end
+
 end

@@ -2,14 +2,11 @@ class BlogsController < ApplicationController
   layout 'blog'
   
   before_filter :find_user
+  before_filter :set_basic_settings
   
   def show
-    @blog = @user.blog
-    if current_user && current_user == @user
-      @posts = @blog.posts.recent.paginate(:page => params[:page], :per_page => 20 )
-    else
-      @posts = @blog.posts.published.paginate(:page => params[:page], :per_page => 20 )
-    end
+    @site = @user.blog
+    @posts = @site.posts
     respond_to do |format|
       format.html
       format.css
@@ -23,6 +20,10 @@ class BlogsController < ApplicationController
       redirect_to root_url(:subdomain => false )
       return 
     end
+  end
+  
+  def set_basic_settings
+    @root_url = ""
   end
   
 end
