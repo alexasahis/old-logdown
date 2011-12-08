@@ -1,4 +1,4 @@
-Koupon::Application.routes.draw do
+Logdown::Application.routes.draw do
 
 
   devise_for :users, :controllers => {
