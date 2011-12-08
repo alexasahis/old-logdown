@@ -1,0 +1,10 @@
+.sharing {
+  p.meta + & {
+    padding: { top: 1em; left: 0; }
+    background: $img-border top left repeat-x;
+  }
+}
+
+.FacebookLikeButton{
+  padding-bottom: 1em;
+}

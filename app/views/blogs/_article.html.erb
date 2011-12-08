@@ -1,0 +1,106 @@
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/29/realeasing-upgrade2rails31-porject/">Upgrade2Rails31 Project</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+  
+
+
+
+<time datetime="2011-09-29T23:08:00+08:00" pubdate  data-updated="true" >Sep 29<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Hi, 我是 <a href="http://blog.xdite.net">xdite</a>。這個 projects 是因應目前 Rails 3.1 成立的升級教學網站。</p>
+
+<p>Ruby on Rails 在 3.1 版加上不少新進的 feature。例如 : Assets Pipeline，內建 SCSS / Coffeescript 等等&#8230;</p>
+
+<p>不過因為這次的架構變更，歷時和幅度也都不小，升級門檻有點高。</p>
+
+<p>而我因為至今已經順利的升級了超過三個 Rails 3.0 -> Rails 3.1 Project，對升級歷程會發生的問題與解法已有著不錯的掌握度，因此開闢這個網站分享實戰 Rails 3.1 的一些實務心得。如果您有任何意見或勘誤，都歡迎 <a href="xdite@about.me">來信</a> 或留言指教。</p>
+
+<h3>Part 1: What&#8217;s new in Rails 3.1</h3>
+
+<ul>
+<li>Major changes
+
+<ul>
+<li><a href="http://guides.rubyonrails.org/3_1_release_notes.html">http://guides.rubyonrails.org/3_1_release_notes.html</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h4>淺談 Asset Pipeline</h4>
+
+<ul>
+<li><a href="/asset-pipeline">Asset Pipeline</a></li>
+<li><a href="/sass-scss">Sass / SCSS</a></li>
+<li><a href="/compass">Compass</a></li>
+<li><a href="/coffee-script">CoffeeScript</a></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>HTTP Streaming [TODO]</li>
+<li>ActiveRecord Identity Map [TODO]</li>
+</ul>
+
+
+<h3>Part 2: Upgrade Steps</h3>
+
+<h4><a href="/upgrade-steps-1">STEP 1: Solve dependency issues / deprecated APIs</a></h4>
+
+<h4><a href="/upgrade-steps-2">STEP 2: Apply Asset Pipeline</a></h4>
+
+<h4>STEP 3: Prepare to deploy to staging / production</h4>
+
+<ul>
+<li>prepare production enviorment
+
+<ul>
+<li>install JavaScript runtime compiler</li>
+<li>Git ( Compass using git version as version)</li>
+</ul>
+</li>
+<li>deploy to staging server to test results
+
+<ul>
+<li><a href="https://github.com/jamis/capistrano-ext">Capistrano multistage</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Part 3: Fix Problems on production</h3>
+
+<ul>
+<li>multiple server race condition problem</li>
+<li>vendor javascript plugins, ex: tinymce</li>
+<li>aseets cache</li>
+<li>assets uglifier</li>
+<li>assets path</li>
+<li>conflict rubygems</li>
+<li>how to solve conflict rubygems</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
