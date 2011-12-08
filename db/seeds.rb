@@ -13,8 +13,6 @@ user.email = "xuite.joke@gmail.com"
 #user.is_admin =  true
 user.save!
 
-blog = Blog.new(:name => "xdite's blog", :description => "for markdown ", :user_id => 1)
-blog.save!
 
 post = user.posts.build(:title => "Post 1", :content => "Post 1 content", :published_at => Time.now)
 post.save!

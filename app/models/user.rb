@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   protected
 
     def create_blog
-      blog = self.build_blog(:name => "#{login}'s Blog")
+      blog = self.build_blog(:title => "#{login}'s Blog")
       blog.save
     end
 end
