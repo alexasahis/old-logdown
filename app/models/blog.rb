@@ -18,4 +18,13 @@ class Blog < ActiveRecord::Base
   	false
   	# TODO
   end
+  
+  def recent_posts_limit
+    5
+    # TODO
+  end
+  
+  def recent_posts
+    posts.published.recent.limit(recent_posts_limit)
+  end 
 end

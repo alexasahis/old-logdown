@@ -1,0 +1,10 @@
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    <% @site.recent_posts.each do |post| %>
+        <li class="post">
+            <%= link_to(post.title, blog_post_path(@site,post)) %>
+        </li>
+    <% end %>
+  </ul>
+</section>

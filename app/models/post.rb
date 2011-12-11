@@ -21,6 +21,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   
   scope :published, where(:aasm_state => "published")
+  scope :recent, order(:published_at => "desc")
   
   before_create :set_blog
 

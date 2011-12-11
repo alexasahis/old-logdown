@@ -1,5 +1,5 @@
 <%= render :partial => "includes/head" %>
-<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} {% if page.sidebar == false %} class="no-sidebar" {% endif %} {% if page.sidebar == 'collapse' or site.sidebar == 'collapse' %} class="collapse-sidebar sidebar-footer" {% endif %}>
+<body>
   <header role="banner"> <%= render :partial => "includes/header" %></header>
   <nav role="navigation"><%= render :partial => "includes/navigation" %></nav>
   <div id="main">

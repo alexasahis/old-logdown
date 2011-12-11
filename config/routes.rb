@@ -72,7 +72,9 @@ Logdown::Application.routes.draw do
 
   constraints(Subdomain) do 
     match '/blog/archives' => 'archives#index'
-    resources :blogs 
+    resources :blogs do 
+      resources :posts
+    end
     match '/' => 'blogs#show' 
 
   end
