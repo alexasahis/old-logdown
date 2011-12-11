@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
- 
+   
+  helper :all
     
   def store_location
     session[:return_to] = request.request_uri

@@ -1,40 +1,17 @@
 <% unless page.no_header %>
   <header>
-    <% if index %>
-      <h1 class="entry-title">
-          <a href="<%= @root_url %><%= post.url %>"><% if @site.titlecase %><%= titlecase(post.title)%><% else %><%= post.title %><% end %></a>
-      </h1>
-    <% else %>
-      <h1 class="entry-title"><% if @site.titlecase %><%= titlecase(post.title)%><% else %><%= post.title %><% end %></h1>
-    <% end %>
-    <% unless page.meta == false %>
-      <p class="meta">
-        <%= render :partial => "post/date", :locals => {
-            :date => page.date, 
-            :data_formatted => page.data_formatted, 
-            #:update => page.update,
-            :updated_formatted => page.updated_formatted,
-        }
-            
-            
-        %><%= time %>
-        <% if @site.disqus_short_name && post.comments != false && @site.disqus_show_comment_count == true %>
-         | <a href="{% if index %}{{ root_url }}{{ post.url }}{% endif %}#disqus_thread">Comments</a>
-        <% end %>
-      </p>
-    <% end %>
+      <h1 class="entry-title"><%= render_post_title(post) %> </h1>
+      <%= render :partial => "common/page_meta", :locals => { :page => page , :time => time , :post => post } unless page.meta == false %>
+
   </header>
 <% end %>
 
-<% if index %>
-  <div class="entry-content">
-      <%= (excerpt.blank?) ? content : excerpt %>
-  </div>
-  <% if excerpt.present? %>
-    <footer>
-      <a rel="full-article" href="{{ root_url }}{{ post.url }}">{{ site.excerpt_link }}</a>
-    </footer>
-  <% end %>
-<% else %>
-<div class="entry-content"><%= content %></div>
+<div class="entry-content">
+  <%= (excerpt.blank?) ? content : excerpt %>
+</div>
+
+<% if excerpt.present? %>
+<footer>
+    <%= link_to(@site.excerpt_link, blog_post_path(@site,post),:rel => "full-article") %>
+</footer>
 <% end %>
