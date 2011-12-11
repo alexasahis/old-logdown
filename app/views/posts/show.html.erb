@@ -1,6 +1,7 @@
 <div>
 <article class="entry" role="article">
   <%= render :partial => "includes/article", :locals => { :post => @post } %> 
+
   <footer>
     <p class="meta">
       <%= render :partial => "post/author" , :locals => { :post => @post }%>

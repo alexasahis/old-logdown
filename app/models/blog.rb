@@ -32,4 +32,8 @@ class Blog < ActiveRecord::Base
     false # TODO
   end
   
+  def excerpt_link
+    "READ MORE"
+    # TODO
+  end
 end
