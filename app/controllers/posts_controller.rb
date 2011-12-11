@@ -36,6 +36,13 @@ class PostsController < ApplicationController\
 		end
 	end
 	
+	def destroy
+    @post = current_user.posts.find(params[:id])
+    @post.destroy
+
+    redirect_to(posts_url)
+  end
+	
 	protected
 	
 	def find_blog
