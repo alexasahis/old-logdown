@@ -4,7 +4,7 @@ Logdown::Application.routes.draw do
   devise_for :users, :controllers => {
     :omniauth_callbacks => "users/omniauth_callbacks"
   } do
-    get "logout" => "devise/sessions#destroy"
+    get "sign_out" => "devise/sessions#destroy"
   end
   
   resources :users do
@@ -68,7 +68,9 @@ Logdown::Application.routes.draw do
   # root :to => 'welcome#index'
 
   constraints(Subdomain) do 
-    resources :blogs
+    resources :blogs do
+	    resources :archives
+	  end
     match '/' => 'blogs#show' 
   end
   
