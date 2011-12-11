@@ -1,4 +1,4 @@
-class PostsController < ApplicationController\
+class Panel::PostsController < ApplicationController\
 	
 	before_filter :require_user, :only => [:edit, :update ]
 	before_filter :find_blog
@@ -16,7 +16,7 @@ class PostsController < ApplicationController\
 		@post = current_user.posts.build(params[:post])
 
 		if @post.save
-			redirect_to posts_path, :notice => "Create Success!"
+			redirect_to panel_posts_path, :notice => "Create Success!"
 		else
 			render :action => "new"
 		end
@@ -30,7 +30,7 @@ class PostsController < ApplicationController\
     @post = current_user.posts.find(params[:id])		
 	
 		if @post.update_attributes(params[:post])
-			redirect_to edit_post_path(@post), :notice => "Update Success!"
+			redirect_to edit_panel_post_path(@post), :notice => "Update Success!"
 		else
 			render :action => "edit"
 		end
@@ -40,7 +40,7 @@ class PostsController < ApplicationController\
     @post = current_user.posts.find(params[:id])
     @post.destroy
 
-    redirect_to(posts_url)
+    redirect_to(panel_posts_url)
   end
 	
 	protected

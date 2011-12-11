@@ -1,6 +1,6 @@
-class SitesController < ApplicationController
-
-	before_filter :require_user, :only => [:edit, :update ]
+class Panel::BlogsController < ApplicationController
+  
+	before_filter :require_user
 	before_filter :find_blog
   
   def edit
@@ -9,7 +9,7 @@ class SitesController < ApplicationController
 	
 	def update
 		if @blog.update_attributes(params[:blog])
-			redirect_to edit_blog_path(current_user.login), :notice => "Update Success!"
+			redirect_to edit_panel_blog_path(current_user.login), :notice => "Update Success!"
 		else
 			render :action => "edit"
 		end

@@ -8,18 +8,16 @@ Logdown::Application.routes.draw do
   end
   
   resources :users do
-    member do 
-      get :replies
-      get :likes
-      get :notes
-    end 
   end
+
   
-  resources :sites, :as => :blogs
-  resources :posts
- 
-  
- # resources :users
+  namespace :panel do 
+    resources :posts
+    resources :blogs
+    resources :users
+  end
+
+# resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -2,7 +2,7 @@
     <div class="box">
     <h2> Write Post </h2>
     	
-    <%= simple_form_for(@post, :url => post_path(@post) , :html => { :method => :put } , :wrapper => :inline) do |f| %>
+    <%= simple_form_for(@post, :url => panel_post_path(@post) , :html => { :method => :put } , :wrapper => :inline) do |f| %>
 		  
   	<%= f.error_notification %>
 

@@ -2,7 +2,7 @@
     <div class="box">
     <h2> Blog Setting </h2>
     	
-    <%= simple_form_for(@blog, :url => blog_path(@blog), :html => { :method => :put } , :wrapper => :inline) do |f| %>
+    <%= simple_form_for(@blog, :url => panel_blog_path(@blog), :html => { :method => :put } , :wrapper => :inline) do |f| %>
   
   	<%= f.error_notification %>
 

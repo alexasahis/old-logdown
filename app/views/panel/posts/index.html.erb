@@ -1,7 +1,7 @@
 <div class="sidebar">
   <div class="box">
     <div class="content">
-      <%= link_to(t("posts.create_post"), new_post_path, :class => "btn success") %>
+      <%= link_to(t("posts.create_post"), new_panel_post_path, :class => "btn success") %>
     </div>
   </div>
 </div>
@@ -27,12 +27,12 @@
     <td><%= post.user.login if post.user %></td>
     <td><%= l post.created_at,:format => :short %></td>
     <td><%# render_post_state_s(post) %></td>
-    <td><%= link_to t("common.edit"), edit_post_path(post) %>
-    <%= link_to t("common.delete"), post_path(post), :confirm => "Are you sure?", :method => :delete %></td>
+    <td><%= link_to t("common.edit"), edit_panel_post_path(post) %>
+    <%= link_to t("common.delete"), panel_post_path(post), :confirm => "Are you sure?", :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-<%= will_paginate(@posts) %>
+<%# will_paginate(@posts) %>
 
 	</div>
 </div>
