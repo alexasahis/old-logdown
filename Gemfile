@@ -29,6 +29,8 @@ gem 'bootstrap-rails', :require => 'bootstrap-rails', :git => 'https://github.co
 
 # Gems used only for assets and not required
 # in production environments by default.
+
+
 group :assets do
   gem "compass", :git => "git://github.com/chriseppstein/compass.git"
   gem 'sass-rails', "  ~> 3.1.0"

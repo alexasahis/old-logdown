@@ -14,6 +14,11 @@ Logdown::Application.routes.draw do
       get :notes
     end 
   end
+  
+  resources :blogs
+  # TODO : [:edit, :update] only 
+ 
+  
  # resources :users
 
   # The priority is based upon order of creation:

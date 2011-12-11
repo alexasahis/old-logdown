@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
 
   after_create :create_blog
 
-
   protected
 
     def create_blog
