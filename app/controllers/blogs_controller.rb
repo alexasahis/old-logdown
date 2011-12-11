@@ -2,13 +2,8 @@ class BlogsController < ApplicationController
 
   layout "blog"
 	
-  before_filter :find_user, :except => [:edit, :update]
-
-
-  before_filter :set_basic_settings, :except => [:edit, :update]
-
-  
-
+  before_filter :find_user
+  before_filter :set_basic_settings
   
   def show
     @site = @user.blog

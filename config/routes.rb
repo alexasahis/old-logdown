@@ -16,6 +16,7 @@ Logdown::Application.routes.draw do
   end
   
   resources :blogs, :controller => "sites"
+  resources :posts
  
   
  # resources :users
