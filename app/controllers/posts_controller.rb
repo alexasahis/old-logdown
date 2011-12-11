@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   before_filter :find_blog
   
   def show
+    @post = Post.find(params[:id])
   end
   
   protected

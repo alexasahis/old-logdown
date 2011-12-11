@@ -27,4 +27,9 @@ class Blog < ActiveRecord::Base
   def recent_posts
     posts.published.recent.limit(recent_posts_limit)
   end 
+  
+  def has_custom_post_sidebar?
+    false # TODO
+  end
+  
 end

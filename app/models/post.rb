@@ -109,5 +109,9 @@ class Post < ActiveRecord::Base
   def updated_formatted
     # TODO
   end
+  
+  def has_sidebar?
+    has_sidebar
+  end
 end
 

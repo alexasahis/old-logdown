@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111208053150) do
+ActiveRecord::Schema.define(:version => 20111211083646) do
 
   create_table "attached_images", :force => true do |t|
     t.integer  "user_id"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20111208053150) do
     t.datetime "updated_at"
     t.string   "aasm_state"
     t.datetime "published_at"
+    t.boolean  "has_sidebar",  :default => true
   end
 
   create_table "roles", :force => true do |t|
