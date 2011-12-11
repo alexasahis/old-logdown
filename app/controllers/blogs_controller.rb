@@ -7,7 +7,7 @@ class BlogsController < ApplicationController
   
   def show
     @site = @user.blog
-    @posts = @site.posts
+    @posts = @site.posts.published
     respond_to do |format|
       format.html
       format.css
