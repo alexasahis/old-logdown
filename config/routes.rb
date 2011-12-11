@@ -15,8 +15,7 @@ Logdown::Application.routes.draw do
     end 
   end
   
-  resources :blogs
-  # TODO : [:edit, :update] only 
+  resources :blogs, :controller => "sites"
  
   
  # resources :users
