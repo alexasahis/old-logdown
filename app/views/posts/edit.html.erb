@@ -1,0 +1,22 @@
+<div class="content">
+    <div class="box">
+    <h2> Write Post </h2>
+    	
+    <%= simple_form_for(@post, :url => post_path(@post) , :html => { :method => :put } , :wrapper => :inline) do |f| %>
+		  
+  	<%= f.error_notification %>
+
+	<fieldset>
+    	<%= f.input :title, :required => true, :autofocus => true %>
+		<%= f.input :content, :as => :text, :input_html => { :class => "xxlarge "}, :autofocus => true %>
+ 	</fieldset>
+
+  	<div class="actions">
+    	<%= f.button :submit, "Submit", :class => "btn primary" %>
+  	</div>
+  
+	<% end %>
+	</div>
+
+</div>
+

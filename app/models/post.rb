@@ -57,11 +57,11 @@ class Post < ActiveRecord::Base
   end
   
   def to_param
-    unless permalink.blank?
-      return "#{id}-#{permalink}"
-    else
+   # unless permalink.blank?
+   #   return "#{id}-#{permalink}"
+   # else
       return "#{id}"
-    end
+   #  end
   end
   
   def create_title
@@ -101,9 +101,9 @@ class Post < ActiveRecord::Base
     # TODO
   end
   
-  def update
-    # TODO
-  end
+  #def update
+  #  # TODO
+  #end
   
   def updated_formatted
     # TODO

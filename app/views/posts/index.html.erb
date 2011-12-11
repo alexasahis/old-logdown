@@ -1,0 +1,25 @@
+<h1>Post List</h1>
+
+<table class="grid">
+  <tr class="head">
+    <td class="first">ID</td>
+    <td style="width:400px">Title</td>
+    <td>User</td>
+    <td>at</td>
+    <td>State</td>
+    <td></td>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr class="">
+    <td class="first"><%= post.id %></td>
+    <td><%= truncate(post.title,:length => 30) %></td>
+    <td><%= post.user.login if post.user %></td>
+    <td><%= l post.created_at,:format => :short %></td>
+    <td><%# render_post_state_s(post) %></td>
+    <td><%= link_to t("common.edit"), edit_post_path(post) %>
+    <%= link_to t("common.delete"), post_path(post), :confirm => "Are you sure?", :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate(@posts) %>

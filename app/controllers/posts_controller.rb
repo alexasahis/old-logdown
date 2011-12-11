@@ -2,6 +2,11 @@ class PostsController < ApplicationController\
 	
 	before_filter :require_user, :only => [:edit, :update ]
 	before_filter :find_blog
+	
+	
+	def index
+		 @posts = current_user.posts.recent.paginate :page => params[:page], :per_page => 20
+	end
 
 	def new
 		@post = Post.new
@@ -16,6 +21,20 @@ class PostsController < ApplicationController\
 			render :action => "new"
 		end
 	end	
+	
+	def edit
+		@post = current_user.posts.find(params[:id])
+	end
+
+	def update
+    @post = current_user.posts.find(params[:id])		
+	
+		if @post.update_attributes(params[:post])
+			redirect_to edit_post_path(@post), :notice => "Update Success!"
+		else
+			render :action => "edit"
+		end
+	end
 	
 	protected
 	
