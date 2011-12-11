@@ -1,17 +1,7 @@
-<% unless page.no_header %>
+<% unless post.no_header %>
   <header>
-      <h1 class="entry-title"><%= render_post_title(post) %> </h1>
-      <%= render :partial => "common/page_meta", :locals => { :page => page , :time => time , :post => post } unless page.meta == false %>
-
+    <h1 class="entry-title"><%= titlecase(post) %></h1>
+    <%= render :partial => "common/page_meta", :locals => { :post => post } unless post.meta == false %>
   </header>
 <% end %>
-
-<div class="entry-content">
-  <%= (excerpt.blank?) ? content : excerpt %>
-</div>
-
-<% if excerpt.present? %>
-<footer>
-    <%= link_to(@site.excerpt_link, blog_post_path(@site,post),:rel => "full-article") %>
-</footer>
-<% end %>
+<div class="entry-content"><%= post.content %></div>

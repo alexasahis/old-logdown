@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111211084956) do
+ActiveRecord::Schema.define(:version => 20111211085516) do
 
   create_table "attached_images", :force => true do |t|
     t.integer  "user_id"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20111211084956) do
     t.datetime "published_at"
     t.boolean  "has_sidebar",    :default => true
     t.boolean  "enable_comment", :default => true
+    t.boolean  "enable_sharing", :default => true
   end
 
   create_table "roles", :force => true do |t|

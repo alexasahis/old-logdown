@@ -1,17 +1,16 @@
 <div>
 <article class="entry" role="article">
-  {% include article.html %}
+  <%= render :partial => "includes/article", :locals => { :post => @post } %> 
   <footer>
     <p class="meta">
-      {% include post/author.html %}
-      {% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
-      {% include post/categories.html %}
+      <%= render :partial => "post/author" , :locals => { :post => @post }%>
+      <%= render :partial => "post/date" , :locals => { :post => @post }%>
+      <%= render :partial => "post/categories" , :locals => { :post => @post }%>
     </p>
-    {% unless page.sharing == false %}
-      {% include post/sharing.html %}
-    {% endunless %}
+    
+    <%= render :partial => "post/sharing", :locals => { :post => @post } unless @post.enable_sharing == false %>
     <p class="meta">
-        <%= render :partial => "next_and_pre", :locals => { :post => :post } %> 
+        <%# render :partial => "next_and_pre", :locals => { :post => @post } %> 
     </p>
   </footer>
 </article>

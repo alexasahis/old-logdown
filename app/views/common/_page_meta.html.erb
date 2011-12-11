@@ -1,13 +1,13 @@
 <p class="meta">
         <%= render :partial => "post/date", :locals => {
-            :date => page.date, 
-            :data_formatted => page.data_formatted, 
-            #:update => page.update,
-            :updated_formatted => page.updated_formatted,
+            :date => post.date, 
+            :data_formatted => post.data_formatted, 
+            #:update => post.update,
+            :updated_formatted => post.updated_formatted,
         }
             
             
-        %><%= time %>
+        %><%= post.published_at %>
         <% if @site.disqus_short_name && post.comments != false && @site.disqus_show_comment_count == true %>
              | <%= link_to("Comments", blog_post_path(@site,post)+"#disqus_thread" )%>
         <% end %>
