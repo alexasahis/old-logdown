@@ -6,6 +6,7 @@ class CreateBlogs < ActiveRecord::Migration
       t.string  :subtitle
       t.text    :description
       t.string  :excerpt_link_name, :default => "READ MORE"
+      t.integer :recent_post_limit, :default => 5
       t.timestamps
     end
   end

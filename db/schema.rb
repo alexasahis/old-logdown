@@ -40,7 +40,8 @@ ActiveRecord::Schema.define(:version => 20111211083646) do
     t.string   "title"
     t.string   "subtitle"
     t.text     "description"
-    t.string   "excerpt_link_name"
+    t.string   "excerpt_link_name", :default => "READ MORE"
+    t.integer  "recent_post_limit", :default => 5
     t.datetime "created_at"
     t.datetime "updated_at"
   end
