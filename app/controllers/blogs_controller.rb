@@ -29,7 +29,7 @@ class BlogsController < ApplicationController
 	
 		@blog = current_user.blog
 		if @blog.update_attributes(params[:blog])
-			redirect_to edit_blog_path(current_user.login), :notice => "update blog success"
+			redirect_to edit_blog_path(current_user.login), :notice => "Update Success!"
 		else
 			render :action => "edit"
 		end

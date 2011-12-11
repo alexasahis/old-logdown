@@ -48,7 +48,6 @@ end
 # To use debugger
 # gem 'ruby-debug'
 
-gem "jquery-rails"
+gem "jquery-rails", "1.0.16"
 gem "fastercsv"
-gem "rails_admin", :git => "https://github.com/sferik/rails_admin.git"
 gem "settingslogic"
