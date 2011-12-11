@@ -31,9 +31,5 @@ class Blog < ActiveRecord::Base
   def has_custom_post_sidebar?
     false # TODO
   end
-  
-  def excerpt_link
-    "READ MORE"
-    # TODO
-  end
+
 end

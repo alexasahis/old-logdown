@@ -12,6 +12,6 @@
 
 <% if post.excerpt.present? %>
 <footer>
-    <%= link_to(@site.excerpt_link, blog_post_path(@site,post),:rel => "full-article") %>
+    <%= link_to(@site.excerpt_link_name, blog_post_path(@site,post),:rel => "full-article") %>
 </footer>
 <% end %>

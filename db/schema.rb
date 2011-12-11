@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111211085516) do
+ActiveRecord::Schema.define(:version => 20111211083646) do
 
   create_table "attached_images", :force => true do |t|
     t.integer  "user_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20111211085516) do
     t.string   "title"
     t.string   "subtitle"
     t.text     "description"
+    t.string   "excerpt_link_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -50,15 +51,15 @@ ActiveRecord::Schema.define(:version => 20111211085516) do
     t.text     "excerpt"
     t.integer  "blog_id"
     t.integer  "user_id"
-    t.boolean  "no_header",      :default => false
-    t.boolean  "meta",           :default => true
+    t.boolean  "no_header",       :default => false
+    t.boolean  "meta",            :default => true
+    t.boolean  "enable_comment",  :default => true
+    t.boolean  "enable_sharging", :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "aasm_state"
     t.datetime "published_at"
-    t.boolean  "has_sidebar",    :default => true
-    t.boolean  "enable_comment", :default => true
-    t.boolean  "enable_sharing", :default => true
+    t.boolean  "has_sidebar",     :default => true
   end
 
   create_table "roles", :force => true do |t|

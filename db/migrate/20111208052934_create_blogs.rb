@@ -5,6 +5,7 @@ class CreateBlogs < ActiveRecord::Migration
       t.string  :title
       t.string  :subtitle
       t.text    :description
+      t.string  :excerpt_link_name, :default => "READ MORE"
       t.timestamps
     end
   end
