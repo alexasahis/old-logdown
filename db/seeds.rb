@@ -15,4 +15,6 @@ user.save!
 
 
 post = user.posts.build(:title => "Post 1", :content => "Post 1 content", :published_at => Time.now)
+
+post = user.posts.build(:title => "Post 2", :content => "Post 2 content", :published_at => Time.now)
 post.save!

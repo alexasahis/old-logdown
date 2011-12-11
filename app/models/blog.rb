@@ -6,4 +6,12 @@ class Blog < ActiveRecord::Base
   def titlecase
     false
   end
+  
+  def disqus_short_name
+    "#TODO"
+  end
+  
+  def disqus_show_comment_count
+    "#TODO"
+  end
 end

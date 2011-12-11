@@ -1,8 +1,7 @@
 <div class="blog-index">
     <% for post in @posts %>
         <article>
-          <%= render :partial => "includes/article" , :locals => { :page => post, :excerpt => post.excerpt, :content => post.content, :index => true , :post => post }%>
-          {% include article.html %}
+          <%= render :partial => "includes/article" , :locals => { :page => post, :excerpt => post.excerpt, :content => post.content, :index => true , :post => post, :time => "" }%>
         </article>
     <% end %>
   <div class="pagination">

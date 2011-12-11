@@ -86,9 +86,27 @@ class Post < ActiveRecord::Base
   
   def url
     "/posts/#{id}"
+    # TODO
   end
 
-
+  def comments
+    # TODO
+  end
   
+  def date
+    # TODO
+  end
+  
+  def data_formatted
+    # TODO
+  end
+  
+  def update
+    # TODO
+  end
+  
+  def updated_formatted
+    # TODO
+  end
 end
 
