@@ -13,4 +13,9 @@ class Blog < ActiveRecord::Base
   def disqus_show_comment_count
     "#TODO"
   end
+  
+  def custom_asides
+  	false
+  	# TODO
+  end
 end
