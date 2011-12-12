@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111211150141) do
+ActiveRecord::Schema.define(:version => 20111212055800) do
 
   create_table "attached_images", :force => true do |t|
     t.integer  "user_id"
@@ -40,17 +40,28 @@ ActiveRecord::Schema.define(:version => 20111211150141) do
     t.string   "title"
     t.string   "subtitle"
     t.text     "description"
-    t.string   "excerpt_link_name",         :default => "READ MORE"
-    t.integer  "recent_post_limit",         :default => 5
+    t.string   "excerpt_link_name",            :default => "READ MORE"
+    t.integer  "recent_post_limit",            :default => 5
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "custom_asides",             :default => false
+    t.boolean  "custom_asides",                :default => false
     t.string   "disqus_short_name"
-    t.boolean  "disqus_show_comment_count", :default => true
-    t.boolean  "titlecase",                 :default => true
-    t.boolean  "has_custom_sidebar",        :default => false
-    t.integer  "recent_posts_limit",        :default => 5
-    t.boolean  "enable_facebook_likes",     :default => true
+    t.boolean  "disqus_show_comment_count",    :default => true
+    t.boolean  "titlecase",                    :default => true
+    t.boolean  "has_custom_sidebar",           :default => false
+    t.integer  "recent_posts_limit",           :default => 5
+    t.boolean  "enable_facebook_likes",        :default => true
+    t.string   "google_analytics_tracking_id"
+    t.string   "twitter_user"
+    t.integer  "twitter_tweet_count",          :default => 4
+    t.boolean  "twitter_show_replies",         :default => false
+    t.boolean  "enable_twitter_follow_button", :default => true
+    t.boolean  "twitter_show_follower_count",  :default => false
+    t.boolean  "enable_twitter_tweet_button",  :default => true
+    t.boolean  "enable_google_plus_one",       :default => true
+    t.string   "google_plus_one_size",         :default => "medium"
+    t.string   "googleplus_user"
+    t.boolean  "googleplus_hidden",            :default => false
   end
 
   create_table "posts", :force => true do |t|
