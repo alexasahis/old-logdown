@@ -13,8 +13,14 @@ user.email = "xuite.joke@gmail.com"
 #user.is_admin =  true
 user.save!
 
+blog = user.blog
+
+blog.disqus_short_name = "xditelogdown"
+blog.save!
 
 post = user.posts.build(:title => "Post 1", :content => "Post 1 content", :published_at => Time.now, :aasm_state => "published")
 
-post = user.posts.build(:title => "Post 2", :content => "Post 2 content", :published_at => Time.now)
+post2 = user.posts.build(:title => "Post 2", :content => "Post 2 content", :published_at => Time.now)
 post.save!
+
+post2.save!

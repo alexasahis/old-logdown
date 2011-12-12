@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20111211150141) do
     t.boolean  "titlecase",                 :default => true
     t.boolean  "has_custom_sidebar",        :default => false
     t.integer  "recent_posts_limit",        :default => 5
+    t.boolean  "enable_facebook_likes",     :default => true
   end
 
   create_table "posts", :force => true do |t|
