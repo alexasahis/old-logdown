@@ -1,25 +1,26 @@
 <div class="content">
     <div class="box">
     <h2> Write Post </h2>
-    	
+        
     <%= simple_form_for(@post, :url => panel_post_path(@post) , :html => { :method => :put } , :wrapper => :inline) do |f| %>
-		  
-  	<%= f.error_notification %>
+          
+      <%= f.error_notification %>
 
-	<fieldset>
-    	<%= f.input :title, :required => true, :autofocus => true %>
-    	<%= f.input :excerpt, :as => :text, :input_html => { :class => "xxlarge"} %>
-		<%= f.input :content, :as => :text, :input_html => { :class => "xxlarge "}, :autofocus => true %>
-		<%= f.input :aasm_state, :collection => Post.aasm_states_for_select, :include_blank => false   %>
-		<%= f.input :published_at, :as => :datetime %> 
- 	</fieldset>
+    <fieldset>
+        <%= f.input :title, :required => true, :autofocus => true %>
+        <%= f.input :excerpt, :as => :text, :input_html => { :class => "xxlarge"} %>
+        <%= f.input :content, :as => :text, :input_html => { :class => "xxlarge "}, :autofocus => true %>
+        <%= f.input :enable_comment, :as => :select, :include_blank => false %>
+        <%= f.input :aasm_state, :collection => Post.aasm_states_for_select, :include_blank => false   %>
+        <%= f.input :published_at, :as => :datetime %> 
+     </fieldset>
 
-  	<div class="actions">
-    	<%= f.button :submit, "Submit", :class => "btn primary" %>
-  	</div>
+      <div class="actions">
+        <%= f.button :submit, "Submit", :class => "btn primary" %>
+      </div>
   
-	<% end %>
-	</div>
+    <% end %>
+    </div>
 
 </div>
 

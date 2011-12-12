@@ -1,22 +1,22 @@
 <div class="content">
     <div class="box">
     <h2> Blog Setting </h2>
-    	
+        
     <%= simple_form_for(@blog, :url => panel_blog_path(@blog), :html => { :method => :put } , :wrapper => :inline) do |f| %>
   
-  	<%= f.error_notification %>
+      <%= f.error_notification %>
 
-	<fieldset>
-    	<%= f.input :title, :required => true, :autofocus => true %>
-    	<%= f.input :subtitle, :required => false %>
-    	<%= f.input :excerpt_link_name, :required => true %>
-    	<%= f.input :recent_post_limit %>
-    	<%= f.input :custom_asides, :as => :select, :include_blank => false %>
-    	<%= f.input :disqus_short_name %>
-    	<%= f.input :disqus_show_comment_count, :as => :select, :include_blank => false  %>
-    	<%= f.input :description, :as => :text, :input_html => { :class => "xxlarge "} , :required => false %>
+    <fieldset>
+        <%= f.input :title, :required => true, :autofocus => true %>
+        <%= f.input :subtitle, :required => false %>
+        <%= f.input :excerpt_link_name, :required => true %>
+        <%= f.input :recent_post_limit %>
+        <%= f.input :custom_asides, :as => :select, :include_blank => false %>
+        <%= f.input :disqus_short_name %>
+        <%= f.input :disqus_show_comment_count, :as => :select, :include_blank => false  %>
+        <%= f.input :description, :as => :text, :input_html => { :class => "xxlarge "} , :required => false %>
 
- 	</fieldset>
+     </fieldset>
 
   <div class="actions">
     <%= f.button :submit, "Update" %>

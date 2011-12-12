@@ -1,0 +1,20 @@
+<% if @site.disqus_short_name && post.enable_comment %>
+<script type="text/javascript">
+      var disqus_shortname = '<%= @site.disqus_short_name %>';
+      <% if post.enable_comment %>
+      <% if Rails.env == "development" %>
+        var disqus_developer = 1;
+      <% end %>
+        var disqus_identifier = '<%= @root_url %><%= post.url %>';
+        var disqus_url = '<%= @root_url %><%= post.url %>';
+        var disqus_script = 'embed.js';
+      <% else %>
+        var disqus_script = 'count.js';
+      <% end %>
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+<% end %>

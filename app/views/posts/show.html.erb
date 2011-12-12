@@ -35,3 +35,8 @@
     <% end %>
 </aside>
 <% end %>
+
+
+<%= content_for :after_footer do %>
+  <%= render :partial => "includes/after_footer", :locals => { :post => @post } %>
+<% end %>

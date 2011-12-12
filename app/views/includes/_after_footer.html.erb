@@ -1,5 +1,5 @@
-<%= render :partial => "includes/disqus"%>
-<%= render :partial => "includes/facebook_like"%>
-<%= render :partial => "includes/google_plus_one"%>
-<%= render :partial => "includes/twitter_sharing"%>
-<%= render :partial => "custom/after_footer" %>
+<%= render :partial => "includes/disqus", :locals => { :post => post }%>
+<%= render :partial => "includes/facebook_like", :locals => { :post => post }%>
+<%= render :partial => "includes/google_plus_one", :locals => { :post => post }%>
+<%= render :partial => "includes/twitter_sharing", :locals => { :post => post }%>
+<%= render :partial => "custom/after_footer" , :locals => { :post => post }%>

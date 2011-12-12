@@ -18,7 +18,7 @@ class BlogsController < ApplicationController
 
   
   def set_basic_settings
-    @root_url = ""
+    @root_url = "http://xdite.logdown.dev"
   end
   
   protected
