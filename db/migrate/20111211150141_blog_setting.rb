@@ -7,6 +7,7 @@ class BlogSetting < ActiveRecord::Migration
     add_column :blogs, :has_custom_sidebar, :boolean, :default => false
     add_column :blogs, :recent_posts_limit, :integer, :default => 5
     add_column :blogs, :enable_facebook_likes, :boolean, :default => true
+    add_column :blogs, :enable_google_plus_one, :boolean, :default => true
     add_column :blogs, :google_analytics_tracking_id, :string
   end
 
@@ -18,6 +19,7 @@ class BlogSetting < ActiveRecord::Migration
     remove_column :blogs, :has_custom_sidebar
     remove_column :blogs, :recent_posts_limit
     remove_column :blogs, :enable_facebook_likes
+    remove_column :blogs, :enable_google_plus_one
     remove_column :blogs, :google_analytics_tracking_id
   end
 end
