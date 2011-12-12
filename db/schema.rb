@@ -52,6 +52,9 @@ ActiveRecord::Schema.define(:version => 20111212055800) do
     t.integer  "recent_posts_limit",           :default => 5
     t.boolean  "enable_facebook_likes",        :default => true
     t.string   "google_analytics_tracking_id"
+    t.string   "subscribe_email"
+    t.string   "subscribe_rss",                :default => "/atom.xml"
+    t.string   "simple_search",                :default => "http://google.com/search"
     t.string   "twitter_user"
     t.integer  "twitter_tweet_count",          :default => 4
     t.boolean  "twitter_show_replies",         :default => false

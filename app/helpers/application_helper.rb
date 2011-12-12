@@ -11,5 +11,12 @@ module ApplicationHelper
 
     flash_messages.join("\n").html_safe
   end
+  
+  def shorthand_url(input)
+    # From octopress_filters.rb
+    input.gsub /(https?:\/\/)(\S+)/ do
+      $2
+    end
+  end
 
 end
