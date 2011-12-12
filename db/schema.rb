@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111211083646) do
+ActiveRecord::Schema.define(:version => 20111211150141) do
 
   create_table "attached_images", :force => true do |t|
     t.integer  "user_id"
@@ -40,10 +40,16 @@ ActiveRecord::Schema.define(:version => 20111211083646) do
     t.string   "title"
     t.string   "subtitle"
     t.text     "description"
-    t.string   "excerpt_link_name", :default => "READ MORE"
-    t.integer  "recent_post_limit", :default => 5
+    t.string   "excerpt_link_name",         :default => "READ MORE"
+    t.integer  "recent_post_limit",         :default => 5
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "custom_asides",             :default => false
+    t.string   "disqus_short_name"
+    t.boolean  "disqus_show_comment_count", :default => true
+    t.boolean  "titlecase",                 :default => true
+    t.boolean  "has_custom_sidebar",        :default => false
+    t.integer  "recent_posts_limit",        :default => 5
   end
 
   create_table "posts", :force => true do |t|
@@ -52,15 +58,15 @@ ActiveRecord::Schema.define(:version => 20111211083646) do
     t.text     "excerpt"
     t.integer  "blog_id"
     t.integer  "user_id"
-    t.boolean  "no_header",       :default => false
-    t.boolean  "meta",            :default => true
-    t.boolean  "enable_comment",  :default => true
-    t.boolean  "enable_sharging", :default => true
+    t.boolean  "no_header",      :default => false
+    t.boolean  "meta",           :default => true
+    t.boolean  "enable_comment", :default => true
+    t.boolean  "enable_sharing", :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "aasm_state"
     t.datetime "published_at"
-    t.boolean  "has_sidebar",     :default => true
+    t.boolean  "has_sidebar",    :default => true
   end
 
   create_table "roles", :force => true do |t|

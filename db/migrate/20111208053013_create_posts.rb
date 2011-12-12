@@ -9,7 +9,7 @@ class CreatePosts < ActiveRecord::Migration
       t.boolean :no_header, :default => false
       t.boolean :meta, :default => true
       t.boolean :enable_comment, :default => true
-      t.boolean :enable_sharging, :default => true
+      t.boolean :enable_sharing, :default => true
       t.timestamps
     end
   end

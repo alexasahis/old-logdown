@@ -42,6 +42,8 @@
   </footer>
   
   <%= javascript_include_tag "application" %>
+  
+  <%= yield :page_specific_javascripts %>
     
   <%# render :partial => "common/facebook_js" %>
   <%# render :partial => "common/google_analytics"%>

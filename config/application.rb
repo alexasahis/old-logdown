@@ -47,4 +47,6 @@ module Logdown
   end
 end
 
+SITE_NAME = "LOGDOWN"
+
 require 'settings'

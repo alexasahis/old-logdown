@@ -1,5 +1,6 @@
 <% unless post.no_header %>
   <header>
+      <h1 class="entry-title"> 
       <h1 class="entry-title"><%= render_post_title(post) %> </h1>
       <%= render :partial => "common/page_meta", :locals => { :post => post } unless post.meta == false %>
 

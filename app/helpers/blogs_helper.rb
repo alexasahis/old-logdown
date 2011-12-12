@@ -20,5 +20,13 @@ module BlogsHelper
   def render_blog_subtitle(blog)
     blog.subtitle
   end
+  
+  def render_blog_updated_time(blog)
+    blog.updated_at.strftime("%Y") 
+  end
+  
+  def render_blog_author_name(blog)
+    blog.user.login
+  end
 
 end
